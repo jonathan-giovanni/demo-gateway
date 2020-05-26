@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: demo-gateway
+
+server:
+  port: 8090
+
+#configurador de servidor de eureka
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
