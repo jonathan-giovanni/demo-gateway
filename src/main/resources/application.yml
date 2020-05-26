@@ -1,9 +1,17 @@
 spring:
   application:
     name: demo-gateway
-
+  #configuracion de spring-cloud-gateway
+  cloud:
+    gateway:
+      routes:
+          predicates:
+            - Path=/api/** #ruta de acceso
 server:
   port: 8090
+
+
+
 
 #configurador de servidor de eureka
 eureka:
@@ -14,5 +22,7 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    #wait-time-in-ms-when-sync-empty: 0
 
 
